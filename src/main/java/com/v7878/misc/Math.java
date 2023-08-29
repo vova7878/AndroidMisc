@@ -22,20 +22,18 @@
 
 package com.v7878.misc;
 
-import java.nio.ByteOrder;
-
 public class Math {
 
-    public static short convEndian(short value, ByteOrder order) {
-        return ByteOrder.nativeOrder().equals(order) ? value : Short.reverseBytes(value);
+    public static short convEndian(short value, boolean swap) {
+        return swap ? value : Short.reverseBytes(value);
     }
 
-    public static int convEndian(int value, ByteOrder order) {
-        return ByteOrder.nativeOrder().equals(order) ? value : Integer.reverseBytes(value);
+    public static int convEndian(int value, boolean swap) {
+        return swap ? value : Integer.reverseBytes(value);
     }
 
-    public static long convEndian(long value, ByteOrder order) {
-        return ByteOrder.nativeOrder().equals(order) ? value : Long.reverseBytes(value);
+    public static long convEndian(long value, boolean swap) {
+        return swap ? value : Long.reverseBytes(value);
     }
 
     public static long maxUL(long a, long b) {
