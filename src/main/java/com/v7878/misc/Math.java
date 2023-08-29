@@ -54,6 +54,28 @@ public class Math {
         return Integer.compareUnsigned(a, b) < 0 ? a : b;
     }
 
+    public static int ceilDiv(int x, int y) {
+        final int q = x / y;
+        // if the signs are the same and modulo not zero, round up
+        if ((x ^ y) >= 0 && (q * y != x)) {
+            return q + 1;
+        }
+        return q;
+    }
+
+    public static long ceilDiv(long x, int y) {
+        return ceilDiv(x, (long) y);
+    }
+
+    public static long ceilDiv(long x, long y) {
+        final long q = x / y;
+        // if the signs are the same and modulo not zero, round up
+        if ((x ^ y) >= 0 && (q * y != x)) {
+            return q + 1;
+        }
+        return q;
+    }
+
     public static long addExactUL(long x, long y) {
         long tmp = x + y;
         if (Long.compareUnsigned(tmp, x) < 0) {
