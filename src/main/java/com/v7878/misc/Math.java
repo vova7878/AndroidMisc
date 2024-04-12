@@ -25,15 +25,15 @@ package com.v7878.misc;
 public class Math {
 
     public static short convEndian(short value, boolean swap) {
-        return swap ? value : Short.reverseBytes(value);
+        return swap ? Short.reverseBytes(value) : value;
     }
 
     public static int convEndian(int value, boolean swap) {
-        return swap ? value : Integer.reverseBytes(value);
+        return swap ? Integer.reverseBytes(value) : value;
     }
 
     public static long convEndian(long value, boolean swap) {
-        return swap ? value : Long.reverseBytes(value);
+        return swap ? Long.reverseBytes(value) : value;
     }
 
     public static long maxUL(long a, long b) {
