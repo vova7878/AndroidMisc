@@ -36,6 +36,22 @@ public class Math {
         return swap ? Long.reverseBytes(value) : value;
     }
 
+    public static float i2f(int n, boolean swap) {
+        return Float.intBitsToFloat(convEndian(n, swap));
+    }
+
+    public static int f2i(float n, boolean swap) {
+        return convEndian(Float.floatToRawIntBits(n), swap);
+    }
+
+    public static double l2d(long n, boolean swap) {
+        return Double.longBitsToDouble(convEndian(n, swap));
+    }
+
+    public static long d2l(double n, boolean swap) {
+        return convEndian(Double.doubleToRawLongBits(n), swap);
+    }
+
     public static long maxUL(long a, long b) {
         return Long.compareUnsigned(a, b) > 0 ? a : b;
     }
