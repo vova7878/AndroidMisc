@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Vladimir Kozelkov
+ * Copyright (c) 2023-2025 Vladimir Kozelkov
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,13 +23,13 @@
 package android.os;
 
 public class Build {
-
     private static int intStub() {
         throw new UnsupportedOperationException("Stub!");
     }
 
     public static class VERSION {
         public static final int SDK_INT = intStub();
+        public static final int SDK_INT_FULL = intStub();
         public static final int PREVIEW_SDK_INT = intStub();
     }
 }

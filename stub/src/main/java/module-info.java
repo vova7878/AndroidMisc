@@ -1,3 +1,3 @@
-module fake_android {
+module android {
     exports android.os;
 }

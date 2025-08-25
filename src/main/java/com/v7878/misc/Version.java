@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Vladimir Kozelkov
+ * Copyright (c) 2025 Vladimir Kozelkov
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,7 +24,30 @@ package com.v7878.misc;
 
 import android.os.Build;
 
+import java.util.Objects;
+
 public class Version {
-    public static final boolean PREVIEW_SDK_BOOL = Build.VERSION.PREVIEW_SDK_INT != 0;
-    public static final int CORRECT_SDK_INT = Build.VERSION.SDK_INT + (PREVIEW_SDK_BOOL ? 1 : 0);
+    public static final boolean IS_ANDROID = isAndroid();
+
+    @SuppressWarnings("ConstantValue")
+    private static boolean isAndroid() {
+        try {
+            return Objects.nonNull(Build.class);
+        } catch (Throwable e) {
+            // class android.os.Build not found
+            return false;
+        }
+    }
+
+    public static int getSDK() {
+        return Build.VERSION.SDK_INT;
+    }
+
+    public static int getSDKFull() {
+        return Build.VERSION.SDK_INT_FULL;
+    }
+
+    public static int getPreviewSDK() {
+        return Build.VERSION.PREVIEW_SDK_INT;
+    }
 }

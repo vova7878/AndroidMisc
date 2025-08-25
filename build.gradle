@@ -9,7 +9,7 @@ java {
 }
 
 dependencies {
-    compileOnly project(path: ':fake_lib')
+    compileOnly project(':stub')
 }
 
 publishing {
