@@ -12,7 +12,6 @@ dependencies {
     compileOnly(project(":stub"))
 }
 
-
 mavenPublishing {
     publishToMavenCentral(automaticRelease = false)
     signAllPublications()
